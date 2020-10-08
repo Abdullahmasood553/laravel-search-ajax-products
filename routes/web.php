@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
+
+
+Route::get('get_product/{id}','HomeController@gettingProduct');
+
+Route::get('/autocomplete/search_product','HomeController@searchProduct');
