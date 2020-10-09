@@ -19,3 +19,5 @@ Route::get('/', 'HomeController@index');
 Route::get('get_product/{id}','HomeController@gettingProduct');
 
 Route::get('/autocomplete/search_product','HomeController@searchProduct');
+
+Route::get('product_detail/{id}', 'HomeController@product_detail');

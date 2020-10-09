@@ -1,14 +1,10 @@
-$(document).ready(function() {
-
-    $("#search_product").autocomplete({
-        source: '../autocomplete/search_product',
-    });
-      
+$(document).ready(function() {    
     $('#get_search_product').click(function() {
         var product = $('#search_product').val();
+        alert(product);
         $.ajax({
             type:'GET',
-            URL: 'get_product/'+product,
+            url: 'get_product/'+product,
             success:function(data) {
                 if(data == 'Product not available') {
                     $('#product_msg').show();
