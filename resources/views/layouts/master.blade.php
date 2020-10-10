@@ -9,6 +9,7 @@
     <title>Search</title>
 </head>
 <body>
+    <div id="notifDiv"></div>
     @yield('content')
     <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="{{ asset('assets/main.js') }}"></script>
