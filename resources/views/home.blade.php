@@ -11,6 +11,8 @@
                 <div class="form-group">
                     <input type="text" name="search_product" id="search_product" class="form-control form-control-lg" placeholder="Enter Product Name">
                 </div>
+                <div id="productList"></div>
+                @csrf
                 <div class="form-group">
                     <button type="button" id="get_search_product" class="btn btn-lg btn-sm btn-primary">Submit</button>
                 </div>

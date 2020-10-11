@@ -1,6 +1,7 @@
 $(document).ready(function() {    
     $('#get_search_product').click(function() {
         var product = $('#search_product').val();
+        alert();
         $.ajax({
             type:'GET',
             url: 'get_product/'+product,
@@ -13,9 +14,34 @@ $(document).ready(function() {
                         $('#notifDiv').fadeOut();
                     }, 3000);
                 } else {
-                    window.location = 'http://127.0.0.1:3000/product_detail/'+data;
+                    window.location = 'http://127.0.0.1:8000/product_detail/'+data;
                 }
             }
         });
     });
+
+    $('#search_product').keyup(function(){ 
+        var query = $(this).val();
+        if(query != '')
+        {
+         var _token = $('input[name="_token"]').val();
+         var url = "autocomplete/fetch";
+         $.ajax({
+          url:url,
+          method:"POST",
+          data:{query:query, _token:_token},
+          success:function(data){
+           $('#productList').fadeIn();  
+                    $('#productList').html(data);
+          }
+         });
+        }
+    });
+
+    $(document).on('click', 'li', function() {
+        $('#search_product').val($(this).text());
+        $('#productList').fadeOut();
+    });
 });
+
+
