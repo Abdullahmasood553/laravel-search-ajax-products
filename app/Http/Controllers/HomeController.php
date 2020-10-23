@@ -52,14 +52,14 @@ class HomeController extends Controller
       $data = DB::table('products')
         ->where('title', 'LIKE', "%{$query}%")
         ->get();
-      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      $output = '<div class="filter-box"><ul class="dropdown-menu" style="min-width:26rem; border-top:none; display:block; position:relative;">';
       foreach($data as $row)
-      {
+      { 
        $output .= '
        <li><a href="#">'.$row->title.'</a></li>
        ';
       }
-      $output .= '</ul>';
+      $output .= '</ul></div>';
       echo $output;
      }
     }

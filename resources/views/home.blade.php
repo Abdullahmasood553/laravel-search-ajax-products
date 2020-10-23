@@ -8,19 +8,20 @@
                     <i class="fas fa-flag-usa"></i> Enter Product Search
                 </h3>
 
-                <div class="form-group">
+                <div class="form-group form-box">
                     <input type="text" name="search_product" id="search_product" class="form-control form-control-lg" placeholder="Enter Product Name">
+                    <button type="button" id="get_search_product" class="btn btn-lg btn-md btn-primary ml-4" style="">Submit</button>
                 </div>
                 <div id="productList"></div>
                 @csrf
-                <div class="form-group">
+                {{-- <div class="form-group form-box">
                     <button type="button" id="get_search_product" class="btn btn-lg btn-sm btn-primary">Submit</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 
-        <div class="container">
+        <div class="container item-boxes">
             <div class="row">
                 @foreach ($products as $key)    
                 <div class="col-md-4">
