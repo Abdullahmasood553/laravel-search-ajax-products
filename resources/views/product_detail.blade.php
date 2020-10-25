@@ -18,11 +18,11 @@
       <div class="col-lg-9">
 
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+          <img class="card-img-top" src="{{ asset('assets/images/products/'.$product->image) }}" alt="">
           <div class="card-body">
             <h3 class="card-title">{{ $product->title }}</h3>
 
-            <h4>$24.99</h4>
+            <h4>$ {{ $product->price }}</h4>
             <p class="card-text">{{ $product->description }}</p>
           </div>
         </div>

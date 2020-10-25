@@ -1,7 +1,7 @@
 $(document).ready(function() {    
     $('#get_search_product').click(function() {
         var product = $('#search_product').val();
-        alert();
+       
         $.ajax({
             type:'GET',
             url: 'get_product/'+product,
@@ -44,4 +44,17 @@ $(document).ready(function() {
     });
 });
 
+const input = document.querySelector('#search_product');
 
+input.addEventListener('blur', function(event) {
+    var $trigger = $(".dropdown");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $(".dropdown-menu").slideUp("fast");
+        }  
+  })
+  
+  input.addEventListener('focus', function() {
+    // $(".filter-box").show();
+    $(this).find(".dropdown-menu").slideToggle("fast");
+
+  })

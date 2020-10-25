@@ -26,7 +26,7 @@
                 @foreach ($products as $key)    
                 <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset('storage/products/'.$key->image) }}" width="200px;" height="200px;">
+                        <img class="card-img-top" src="{{ asset('assets/images/products/'.$key->image) }}" width="200px;" height="200px;">
                         <div class="card-body">
                           <p class="card-text">{{ $key->title }}</p>
                         </div>
